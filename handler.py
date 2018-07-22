@@ -23,17 +23,17 @@ class MessageHandler(object):
         elif mtype == conf.MSG_CS_MOVETO:
             if self.onlines.has_key(hid):
                 data = MsgCSMoveto().unmarshal(msg)
-                return conf.MOVE_RESPONSE, (self.onlines[hid],data.x,data.y)
+                return conf.MOVE_RESPONSE, (self.onlines[hid],data.x,data.z)
             else:
                 print 'trying move player:'+hid+', yet he is offline.'
 
     def _login(self,hid,uid):
         if self.data.users.has_key(uid):
             self.onlines[hid]=uid
-            info = self.data.users[uid]['info']
-            head = MsgSCLogin(info['pos']['x'],info['pos']['y'])
-            data = head.marshal()
-            return conf.LOGIN_RESPONSE, data
+            userinfo = self.data.users[uid]
+            #head = MsgSCLogin(info['pos']['x'],info['pos']['z'])
+            #data = head.marshal()
+            return conf.LOGIN_RESPONSE, userinfo
 
 
 

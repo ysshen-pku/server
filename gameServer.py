@@ -61,19 +61,25 @@ class GameServer(object):
                 if etype == conf.NET_CONNECTION_DATA:
                     # handle msg and process
                     state, others = self.msgHandler._handle(hid, data)
-                    print state,others
+                    # print state,others
                     if state == conf.LOGIN_RESPONSE:
                         # need todo -------------------------
                         # self.scenemanager.newplayerin
-                        self.msgQueue.put_nowait(([hid],others))
+                        uid,x,z = others['uid'], others['info']['pos']['x'],others['info']['pos']['z']
+                        head = MsgSCLogin(x,z)
+                        data = head.marshal()
+                        self.msgQueue.put_nowait(([hid],data))
+                        self.scenceManager.newPlayerIn(uid,x,z)
+                        if self._getOtherHids(hid):
+                            head2 = MsgSCNewPlayer(uid,x,z)
+                            data2 = head2.marshal()
+                            self.msgQueue.put_nowait((self._getOtherHids(hid), data2))
                     # response
-                    elif state == conf.MOVE_RESPONSE:
+                    if state == conf.MOVE_RESPONSE:
                         uid, x, y = others
                         msg = self.scenceManager._playerMove(uid,x,y)
                         if msg:
-                            otherPlayers = self.host.clients.remove(uid)
-                            if otherPlayers:
-                                self.msgQueue.put_nowait((otherPlayers,msg))
+                            self.msgQueue.put_nowait((self._getOtherHids(hid),msg))
                 if etype == conf.NET_CONNECTION_NEW:
                     # Todo
                     print 'new connection'
@@ -85,11 +91,21 @@ class GameServer(object):
             self._trySendMsg()
             # sync sever scence to client
 
+    def _getOtherHids(self,hid):
+        hids = []
+        if self.host.clients:
+            for client in self.host.clients:
+                if client and client.hid != hid:
+                    hids.append(client.hid)
+        return hids
+
     def _trySendMsg(self):
         while not self.msgQueue.empty():
             hids, data = self.msgQueue.get()
-            for hid in hids:
-                self.host.sendClient(hid,data)
+            # print hids,data
+            if hids:
+                for hid in hids:
+                    self.host.sendClient(hid,data)
 
 
     def _syncSC(self):

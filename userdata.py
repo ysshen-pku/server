@@ -50,21 +50,23 @@ class UserData():
 def main():
 	random.seed(time.time())
 	data=UserData()
-	posx = random.uniform(0, 5)
-	if random.randint(0, 1) == 0:
-		posx *= -1
-	tmpinfo = {'pos': {'x': posx, 'y': 0, 'z': 0}, 'rot': {'x': 0,'y': 0, 'z': 0},'hp':100, 's': 0}
+#	posx = random.uniform(0, 5)
+#	if random.randint(0, 1) == 0:
+#		posx *= -#1
+	posx = 1
+	tmpinfo = {'pos': {'x': posx, 'y': 0, 'z': 0}, 'rot': {'x': 0,'y': 0, 'z': 0}, 's': 0}
 	data._adduser(1,'123',tmpinfo)
-	posx = random.uniform(0, 5)
-	if random.randint(0, 1) == 0:
-		posx *= -1
-	tmpinfo = {'pos': {'x': posx, 'y': 0, 'z': 0}, 'rot': {'x': 0,'y': 0, 'z': 0},'hp':100, 's': 0}
+#	posx = random.uniform(0, 5)
+#	if random.randint(0, 1) == 0:
+#		posx *= -#1
+	posx = -1
+	tmpinfo = {'pos': {'x': posx, 'y': 0, 'z': 0}, 'rot': {'x': 0,'y': 0, 'z': 0}, 's': 0}
 	tmpinfo['pos'][u'x'] = posx
 	data._adduser(2, '123', tmpinfo)
 	posx = random.uniform(0, 5)
 	if random.randint(0, 1) == 0:
 		posx *= -1
-	tmpinfo = {'pos': {'x': posx, 'y': 0, 'z': 0}, 'rot': {'x': 0, 'y': 0, 'z': 0},'hp':100, 's': 0}
+	tmpinfo = {'pos': {'x': posx, 'y': 0, 'z': 0}, 'rot': {'x': 0, 'y': 0, 'z': 0}, 's': 0}
 	tmpinfo['pos'][u'x'] = posx
 	data._adduser(3, '123', tmpinfo)
 
