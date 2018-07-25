@@ -13,7 +13,7 @@ import struct
 from timer import TimerManager
 from netStream import NetStream
 from simpleHost import SimpleHost
-from scence import ScenceManager
+from scene import SceneManager
 
 from userdata import UserData
 
@@ -23,7 +23,7 @@ class GameServer(object):
         self.playerHids = []
         self.host = SimpleHost()
         self.data = UserData()
-        self.scenceManager = ScenceManager()
+        self.sceneManager = SceneManager()
         self.msgQueue = Queue.Queue()
         self.onlines = {}
         self.online = False
@@ -34,7 +34,7 @@ class GameServer(object):
         self.host.startup(port)
         ticktimer = TimerManager.addRepeatTimer(0.02,self._tick)
         spawntimer = TimerManager.addRepeatTimer(1.0,self._spawnMonster)
-        monstertimer = TimerManager.addRepeatTimer(0.05,self._monsterMove)
+        monstertimer = TimerManager.addRepeatTimer(0.1,self._monsterMove)
         sendtimer = TimerManager.addRepeatTimer(0.01,self._trySendMsg)
         synctimer = TimerManager.addRepeatTimer(0.03,self._syncPlayers)
         trapsyncer = TimerManager.addRepeatTimer(0.05,self._syncTraps)
@@ -65,8 +65,9 @@ class GameServer(object):
                 # pass
             if etype == conf.NET_CONNECTION_LEAVE:
                 # Todo
-                self.playerHids.remove(hid)
-                self.onlines.pop(hid)
+                if self.onlines.has_key(hid):
+                    self.playerHids.remove(hid)
+                    self.onlines.pop(hid)
                 if not self.playerHids:
                     self.online = False
 
@@ -78,21 +79,21 @@ class GameServer(object):
         elif mtype == conf.MSG_CS_MOVETO:
             if self.onlines.has_key(hid):
                 data = MsgCSMoveto().unmarshal(msg)
-                self.scenceManager._playerMove(self.onlines[hid],data.x,data.z,data.ry)
+                self.sceneManager._playerMove(self.onlines[hid],data.x,data.z,data.ry)
             else:
-                print 'trying move player:'+hid+', yet he is offline.'
+                print 'trying move player:'+str(hid)+', yet he is offline.'
         elif mtype == conf.MSG_CS_TRAPPLACE:
             if self.onlines.has_key(hid):
                 data = MsgCSTrapPlace().unmarshal(msg)
-                if self.scenceManager.addTrap(data.type,data.x,data.z):
-                    # todo ---- change hid coin
+                if self.sceneManager.addTrap(data.type,data.x,data.z):
+                    # todo ---in scene- change hid coin
                     pass
             else:
                 print 'offline player trying to place trap'
         elif mtype == conf.MSG_CS_MONSTER_DAMAGE:
             if self.onlines.has_key(hid):
                 data = MsgCSMonsterDamage().unmarshal(msg)
-                deadmids = self.scenceManager.handleDamage(data.uid,data.mid,data.damage,data.stun,data.range,data.cx,data.cz)
+                deadmids = self.sceneManager.handleDamage(data.uid,data.mid,data.damage,data.stun,data.range,data.cx,data.cz)
                 self._syncMonster()
                 if deadmids:
                     for mid in deadmids:
@@ -108,11 +109,11 @@ class GameServer(object):
             self.onlines[hid]=uid
             info = self.data.users[uid]
             info = info['info']
-            head = MsgSCLogin(info['pos']['x'],info['pos']['z'])
+            head = MsgSCGameStart(info['pos']['x'],info['pos']['z'])
             data = head.marshal()
             self.msgQueue.put_nowait(([hid], data))
             self.playerHids.append(hid)
-            self.scenceManager.newPlayerIn(uid, info['pos']['x'], info['pos']['z'])
+            self.sceneManager.newPlayerIn(uid, info['pos']['x'], info['pos']['z'])
             self.online = True
 
     def _getPlayerhid(self,uid):
@@ -140,7 +141,7 @@ class GameServer(object):
 
     def _spawnMonster(self):
         if self.online:
-            info = self.scenceManager.newMonster()
+            info = self.sceneManager.newMonster()
             head = MsgSCMonsterMove(info['mid'],info['x'],info['z'])
             self.msgQueue.put((self.playerHids,head.marshal()))
             self.monsterNums += 1
@@ -148,16 +149,17 @@ class GameServer(object):
 
     def _monsterMove(self):
         if self.online:
-            if self.scenceManager.monsterList:
-                for monster in self.scenceManager.monsterList.itervalues():
-                    aimpos = self.scenceManager.getMonsterDes(monster['mid'])
+            if self.sceneManager.monsterList:
+                for monster in self.sceneManager.monsterList.itervalues():
+                    aimpos = self.sceneManager.getMonsterPos(monster['mid'])
+                    #print aimpos
                     head = MsgSCMonsterMove(monster['mid'],aimpos[0],aimpos[1])
                     self.msgQueue.put((self.playerHids,head.marshal()))
 
     def _syncMonster(self):
         if self.online:
-            if self.scenceManager.monsterList:
-                for monster in self.scenceManager.monsterList.itervalues():
+            if self.sceneManager.monsterList:
+                for monster in self.sceneManager.monsterList.itervalues():
                     head = MsgSCMonsterState(monster['mid'],monster['hp'],monster['state'])
                     self.msgQueue.put((self.playerHids,head.marshal()))
 
@@ -167,7 +169,7 @@ class GameServer(object):
         if self.playerHids:
             for hid in self.playerHids:
                 uid = self.onlines[hid]
-                playerinfos = self.scenceManager._getOtherPlayerInfos(uid)
+                playerinfos = self.sceneManager._getOtherPlayerInfos(uid)
                 for playerinfo in playerinfos:
                     head = MsgSCMoveto(playerinfo['uid'],playerinfo['x'],playerinfo['z'])
                     self.msgQueue.put_nowait(([hid], head.marshal()))
@@ -175,7 +177,7 @@ class GameServer(object):
     def _syncPlayerInfo(self, hid, uid):
         if hid == None:
             hid = self._getPlayerhid(uid)
-        info = self.scenceManager.playerList[uid]
+        info = self.sceneManager.playerList[uid]
         head = MsgSCPlayerInfo(uid,info['hp'],info['coin'],info['exp'])
         self.msgQueue.put_nowait(([hid], head.marshal()))
 
@@ -183,7 +185,7 @@ class GameServer(object):
     def _syncTraps(self):
         if self.playerHids:
             for hid in self.playerHids:
-                trapinfos = self.scenceManager.getTrapInfos()
+                trapinfos = self.sceneManager.getTrapInfos()
                 for trap in trapinfos:
                     head = MsgSCTrapPlace(trap['tid'], trap['type'], trap['x'], trap['z'])
                     self.msgQueue.put_nowait(([hid], head.marshal()))

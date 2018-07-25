@@ -8,9 +8,9 @@ class MsgCSLogin(SimpleHeader):
 		self.appendParam('uid', uid, 'I')
 		self.appendParam('icon', icon, 'i')
 
-class MsgSCLogin(SimpleHeader):
+class MsgSCGameStart(SimpleHeader):
 	def __init__(self, x = 0, z = 0, hp = 100):
-		super(MsgSCLogin, self).__init__(conf.MSG_SC_LOGIN)
+		super(MsgSCGameStart, self).__init__(conf.MSG_SC_GAMESTART)
 		self.appendParam('x', x, 'd')
 		self.appendParam('z', z, 'd')
 		self.appendParam('hp',hp, 'h')
@@ -97,11 +97,17 @@ class MsgSCPlayerInfo(SimpleHeader):
 		super(MsgSCPlayerInfo,self).__init__(conf.MSG_SC_PLAYER_INFO)
 		self.appendParam('uid',uid,'I')
 		self.appendParam('hp',hp,'h')
-		self.appendParam('coin',coin,'i')
-		self.appendParam('exp',exp,'i')
+		self.appendParam('coin',coin,'I')
+		self.appendParam('exp',exp,'I')
 
 class MsgSCMonsterDeath(SimpleHeader):
 	def __init__(self, uid = 0, mid = 0):
 		super(MsgSCMonsterDeath,self).__init__(conf.MSG_SC_MONSTER_DEATH)
 		self.appendParam('uid',uid,'I')
 		self.appendParam('mid',mid,'I')
+
+class MsgSCRoundState(SimpleHeader):
+	def __init__(self, rid = 0, basehp = 0):
+		super(MsgSCRoundState,self).__init__(conf.MSG_SC_ROUND_STATE)
+		self.appendParam('rid',rid,'H')
+		self.appendParam('basehp',basehp,'h')

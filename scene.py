@@ -3,14 +3,16 @@ sys.path.append('./common')
 import json
 import conf
 import math
+import time
 from events import *
 from collections import deque
 # game scence data and manager
 
-class ScenceManager(object):
+class SceneManager(object):
 
     def __init__(self):
-        # self.mapinfo = bool [][]
+        self.mapInfo = [[] for i in xrange(180)]
+        self.readMapInfo()
         # uid - playerinfo
         # playerinfo { 'x','z',  'Ry',
         # 'HP', 'State', ..?}
@@ -21,17 +23,18 @@ class ScenceManager(object):
         self.trapList = {}
         self.currMosterId = 0
         self.currTrapId = 0
-        self.mapInfo = [[] for i in xrange(100)]
-        self.readMapInfo()
+        self.monsterSpeed = conf.MONSTER_SPEED_WALK
+        self.time = time.time()
 
     def readMapInfo(self):
-        with open("./mapinfo",'r') as mapfile:
+        with open("./mapinfo.txt",'r') as mapfile:
             i = 0
             for line in mapfile:
                 line = line[1:-1]
                 nums = line.split(',')
                 for j in xrange(conf.MAP_SIZE_X):
                     self.mapInfo[i].append(nums[j])
+                # print self.mapInfo[i]
                 i += 1
 
     def newPlayerIn(self, playerid, x, z):
@@ -44,8 +47,12 @@ class ScenceManager(object):
 
     def newMonster(self):
         self.currMosterId += 1
-        x,z = conf.MONSTER_SPAWN_POINT
-        info = {'x': x, 'y': 0, 'z': z, 'mid': self.currMosterId, 'hp':100, 'state':conf.MONSTER_STATE_MOVE}
+        x,z = conf.MONSTER_DESTINATION
+        des = {'x':x, 'z':z}
+        ax, az =conf.MONSTER_SPAWN_POINT
+        x = -10 + ax * conf.MAP_ACCURATE
+        z = 35 - az * conf.MAP_ACCURATE
+        info = {'x': x, 'y': 0, 'z': z,'ax':ax, 'az':az,'des':des, 'mid': self.currMosterId, 'hp':100, 'state':conf.MONSTER_STATE_MOVE}
         self.monsterList[self.currMosterId] = info
         return info
 
@@ -70,7 +77,7 @@ class ScenceManager(object):
                 if tmp:
                     monsters.append(tmp)
             else:
-                print 'trying to damage a non-exist monster'
+                # print 'trying to damage a non-exist monster'
                 return None
         else:
             if self.monsterList:
@@ -131,17 +138,54 @@ class ScenceManager(object):
                     others.append(playerid)
         return others
 
-    def getMonsterDes(self,mid):
-        aimpos = conf.MONSTER_DESTINATION
+    def getMonsterPos(self, mid):
         info = self.monsterList[mid]
         if self.playerList:
             mindistance = conf.MONSTER_CHASE_RANGE + 1
+            despos = None
             for player in self.playerList.itervalues():
                 distance = math.hypot(info['x']-player['x'],info['z']-player['z'])
                 if distance < mindistance:
-                    aimpos = (player['x'],player['z'])
+                    despos = self._getArrayPos(player['x'],player['z'])
+                    print player['x'],player['z']
+                    print despos
                     mindistance = distance
-        return aimpos
+            if despos:
+                self.monsterList[mid]['des']={'x':despos[0],'z':despos[1]}
+        self._monsterMove(mid)
+        return self.monsterList[mid]['x'],self.monsterList[mid]['z']
+
+    # change position to fixed pos
+    def _getArrayPos(self,x,z):
+        if x<conf.MAP_EDGE_X or z>conf.MAP_EDGE_Z:
+            return None,None
+        return int(10*(x-conf.MAP_EDGE_X)/3),int(10*(conf.MAP_EDGE_Z-z)/3)
+
+    # should be call every 0.1s
+    def _monsterMove(self, mid):
+        monster = self.monsterList[mid]
+        ax,az = monster['ax'],monster['az']
+        des = monster['des']
+        if des['z'] == az and des['x']==ax:
+            return False
+        elif des['z'] > az and az+1<conf.MAP_SIZE_Z and self.mapInfo[az+1][ax]:
+            # move down
+            monster['az'] += 1
+            monster['z'] -=0.3
+        elif des['z'] <az and az-1 >-1 and self.mapInfo[az-1][ax]:
+            monster['az'] -= 1
+            monster['z'] += 0.3
+        elif des['x'] > ax and ax+1<conf.MAP_SIZE_X and self.mapInfo[az][ax+1]:
+            monster['ax'] += 1
+            monster['x'] += 0.3
+        elif des['x'] < ax and ax-1 >-1 and self.mapInfo[az][ax-1]:
+            monster['ax'] -= 1
+            monster['x'] -= 0.3
+        else:
+            return False
+        # print monster['ax'],monster['az'],monster['des']
+        return True
+
 
 
 
@@ -149,7 +193,7 @@ class ScenceManager(object):
     # def _tryMoveto(self, name, pos2D):
 
 def main():
-    scene = ScenceManager()
+    scene = SceneManager()
 
 
 if __name__ == "__main__":
