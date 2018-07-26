@@ -93,12 +93,14 @@ class MsgCSMonsterDamage(SimpleHeader):
 		self.appendParam('cz',cz, 'd')
 
 class MsgSCPlayerInfo(SimpleHeader):
-	def __init__(self, uid =0 , hp = 0, coin = 0, exp = 0):
+	def __init__(self, uid =0 , hp = 0, coin = 0, exp = 0, spike = 0, freeze = 0):
 		super(MsgSCPlayerInfo,self).__init__(conf.MSG_SC_PLAYER_INFO)
 		self.appendParam('uid',uid,'I')
 		self.appendParam('hp',hp,'h')
 		self.appendParam('coin',coin,'I')
 		self.appendParam('exp',exp,'I')
+		self.appendParam('spike', spike, 'H')
+		self.appendParam('freeze', freeze, 'H')
 
 class MsgSCMonsterDeath(SimpleHeader):
 	def __init__(self, uid = 0, mid = 0):
@@ -111,3 +113,19 @@ class MsgSCRoundState(SimpleHeader):
 		super(MsgSCRoundState,self).__init__(conf.MSG_SC_ROUND_STATE)
 		self.appendParam('rid',rid,'H')
 		self.appendParam('basehp',basehp,'h')
+
+class MsgSCGameReset(SimpleHeader):
+	def __init__(self,rid = 0 , x = 0, z = 0 ):
+		super(MsgSCGameReset,self).__init__(conf.MSG_SC_GAME_RESET)
+		self.appendParam('rid', rid, 'H')
+		self.appendParam('x', x, 'd')
+		self.appendParam('z', z, 'd')
+
+class MsgCSBuyTrap(SimpleHeader):
+	def __init__(self, uid = 0,ttype = 0):
+		super(MsgCSBuyTrap, self).__init__(conf.MSG_CS_BUY_TRAP)
+		self.appendParam('uid', uid, 'I')
+		self.appendParam('ttype',ttype,'H')
+
+
+

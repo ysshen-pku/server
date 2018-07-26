@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d4959cd-a9e8-4b59-b574-c7a0707acd71" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/astar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/conf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/events.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/events.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameServer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scence.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapinfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mapinfo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +22,8 @@
       <file leaf-file-name="gameServer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gameServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+            <state relative-caret-position="-3132">
+              <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -29,8 +31,8 @@
       <file leaf-file-name="events.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/events.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2177">
-              <caret line="112" column="45" selection-start-line="112" selection-start-column="45" selection-end-line="112" selection-end-column="45" />
+            <state relative-caret-position="1802">
+              <caret line="108" column="39" lean-forward="true" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
               <folding>
                 <element signature="e#22#33#0" expanded="true" />
               </folding>
@@ -38,11 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scene.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scene.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scene.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="447">
+              <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="astar.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/astar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -50,7 +61,7 @@
       <file leaf-file-name="simpleHost.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/network/simpleHost.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="585">
               <caret line="187" column="72" selection-start-line="187" selection-start-column="69" selection-end-line="187" selection-end-column="72" />
             </state>
           </provider>
@@ -59,8 +70,8 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="76" column="29" lean-forward="true" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
+            <state relative-caret-position="324">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -98,6 +109,10 @@
       <find>SC_LOGIN</find>
       <find>SCLogin</find>
       <find>getMonsterPos</find>
+      <find>_syncPlayerInfo</find>
+      <find>mapInfo</find>
+      <find>add</find>
+      <find>%</find>
     </findStrings>
     <replaceStrings>
       <replace>logging.debug</replace>
@@ -123,17 +138,18 @@
         <option value="$PROJECT_DIR$/mapinfo" />
         <option value="$PROJECT_DIR$/handler.py" />
         <option value="$PROJECT_DIR$/scence.py" />
-        <option value="$PROJECT_DIR$/mapinfo.txt" />
         <option value="$PROJECT_DIR$/gameServer.py" />
+        <option value="$PROJECT_DIR$/mapinfo.txt" />
+        <option value="$PROJECT_DIR$/common/events.py" />
         <option value="$PROJECT_DIR$/scene.py" />
         <option value="$PROJECT_DIR$/common/conf.py" />
-        <option value="$PROJECT_DIR$/common/events.py" />
+        <option value="$PROJECT_DIR$/astar.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="974" />
+    <option name="width" value="1416" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -143,7 +159,20 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -161,7 +190,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.gameServer">
+  <component name="RunManager" selected="Python.scene">
+    <configuration name="astar" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="mserver" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/astar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="conf" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="mserver" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -216,24 +263,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="scence" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="mserver" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scence.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="scene" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="mserver" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -255,17 +284,17 @@
     <list>
       <item itemvalue="Python.events" />
       <item itemvalue="Python.gameServer" />
-      <item itemvalue="Python.scence" />
       <item itemvalue="Python.scene" />
       <item itemvalue="Python.conf" />
+      <item itemvalue="Python.astar" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gameServer" />
-        <item itemvalue="Python.conf" />
         <item itemvalue="Python.scene" />
+        <item itemvalue="Python.astar" />
+        <item itemvalue="Python.conf" />
+        <item itemvalue="Python.gameServer" />
         <item itemvalue="Python.events" />
-        <item itemvalue="Python.scence" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +312,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1416" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25887266" />
@@ -294,7 +323,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.25993556" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.26100966" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -306,22 +335,22 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2867884" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.25887266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2867884" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3469388" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -335,8 +364,13 @@
           <line>52</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scene.py</url>
+          <line>283</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -392,20 +426,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network/simpleHost.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5049">
-          <caret line="187" column="69" lean-forward="true" selection-start-line="187" selection-start-column="62" selection-end-line="187" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userdata.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
@@ -463,13 +483,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/scence.py" />
     <entry file="file://$PROJECT_DIR$/conf.py" />
     <entry file="file://$PROJECT_DIR$/simpleHost.py" />
     <entry file="file://$PROJECT_DIR$/smalltest.py">
@@ -494,13 +508,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/scence.py" />
     <entry file="file://$PROJECT_DIR$/conf.py" />
     <entry file="file://$PROJECT_DIR$/simpleHost.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/unitTest.py" />
@@ -591,27 +599,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4077">
-          <caret line="151" column="16" lean-forward="true" selection-start-line="151" selection-start-column="16" selection-end-line="151" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mapinfo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="179" column="163" selection-start-line="179" selection-start-column="163" selection-end-line="179" selection-end-column="163" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="1067" selection-start-line="1067" selection-end-line="1067" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/scence.py" />
     <entry file="file://$PROJECT_DIR$/mapinfo">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -626,41 +614,266 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/network/simpleHost.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="187" column="72" selection-start-line="187" selection-start-column="69" selection-end-line="187" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="76" column="29" lean-forward="true" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+        <state relative-caret-position="-3132">
+          <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/simpleHost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="187" column="72" selection-start-line="187" selection-start-column="69" selection-end-line="187" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/events.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2177">
-          <caret line="112" column="45" selection-start-line="112" selection-start-column="45" selection-end-line="112" selection-end-column="45" />
+        <state relative-caret-position="1802">
+          <caret line="108" column="39" lean-forward="true" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
           <folding>
             <element signature="e#22#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1067" selection-start-line="1067" selection-end-line="1067" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/implementation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2806">
+          <caret line="170" column="31" lean-forward="true" selection-start-line="170" selection-start-column="31" selection-end-line="170" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapinfo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4577">
+          <caret line="7" column="120" selection-start-line="7" selection-start-column="119" selection-end-line="7" selection-end-column="120" />
+          <caret line="8" column="120" selection-start-line="8" selection-start-column="119" selection-end-line="8" selection-end-column="120" />
+          <caret line="9" column="120" selection-start-line="9" selection-start-column="119" selection-end-line="9" selection-end-column="120" />
+          <caret line="10" column="120" selection-start-line="10" selection-start-column="119" selection-end-line="10" selection-end-column="120" />
+          <caret line="11" column="120" selection-start-line="11" selection-start-column="119" selection-end-line="11" selection-end-column="120" />
+          <caret line="12" column="120" selection-start-line="12" selection-start-column="119" selection-end-line="12" selection-end-column="120" />
+          <caret line="13" column="120" selection-start-line="13" selection-start-column="119" selection-end-line="13" selection-end-column="120" />
+          <caret line="14" column="120" selection-start-line="14" selection-start-column="119" selection-end-line="14" selection-end-column="120" />
+          <caret line="15" column="120" selection-start-line="15" selection-start-column="119" selection-end-line="15" selection-end-column="120" />
+          <caret line="16" column="120" selection-start-line="16" selection-start-column="119" selection-end-line="16" selection-end-column="120" />
+          <caret line="17" column="120" selection-start-line="17" selection-start-column="119" selection-end-line="17" selection-end-column="120" />
+          <caret line="18" column="120" selection-start-line="18" selection-start-column="119" selection-end-line="18" selection-end-column="120" />
+          <caret line="19" column="120" selection-start-line="19" selection-start-column="119" selection-end-line="19" selection-end-column="120" />
+          <caret line="20" column="120" selection-start-line="20" selection-start-column="119" selection-end-line="20" selection-end-column="120" />
+          <caret line="21" column="120" selection-start-line="21" selection-start-column="119" selection-end-line="21" selection-end-column="120" />
+          <caret line="22" column="120" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="120" />
+          <caret line="23" column="120" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="120" />
+          <caret line="24" column="120" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="120" />
+          <caret line="25" column="120" selection-start-line="25" selection-start-column="119" selection-end-line="25" selection-end-column="120" />
+          <caret line="26" column="120" selection-start-line="26" selection-start-column="119" selection-end-line="26" selection-end-column="120" />
+          <caret line="27" column="120" selection-start-line="27" selection-start-column="119" selection-end-line="27" selection-end-column="120" />
+          <caret line="28" column="120" selection-start-line="28" selection-start-column="119" selection-end-line="28" selection-end-column="120" />
+          <caret line="29" column="120" selection-start-line="29" selection-start-column="119" selection-end-line="29" selection-end-column="120" />
+          <caret line="30" column="120" selection-start-line="30" selection-start-column="119" selection-end-line="30" selection-end-column="120" />
+          <caret line="31" column="120" selection-start-line="31" selection-start-column="119" selection-end-line="31" selection-end-column="120" />
+          <caret line="32" column="120" selection-start-line="32" selection-start-column="119" selection-end-line="32" selection-end-column="120" />
+          <caret line="33" column="120" selection-start-line="33" selection-start-column="119" selection-end-line="33" selection-end-column="120" />
+          <caret line="34" column="120" selection-start-line="34" selection-start-column="119" selection-end-line="34" selection-end-column="120" />
+          <caret line="35" column="120" selection-start-line="35" selection-start-column="119" selection-end-line="35" selection-end-column="120" />
+          <caret line="36" column="120" selection-start-line="36" selection-start-column="119" selection-end-line="36" selection-end-column="120" />
+          <caret line="37" column="120" selection-start-line="37" selection-start-column="119" selection-end-line="37" selection-end-column="120" />
+          <caret line="38" column="120" selection-start-line="38" selection-start-column="119" selection-end-line="38" selection-end-column="120" />
+          <caret line="39" column="120" selection-start-line="39" selection-start-column="119" selection-end-line="39" selection-end-column="120" />
+          <caret line="40" column="120" selection-start-line="40" selection-start-column="119" selection-end-line="40" selection-end-column="120" />
+          <caret line="41" column="120" selection-start-line="41" selection-start-column="119" selection-end-line="41" selection-end-column="120" />
+          <caret line="42" column="120" selection-start-line="42" selection-start-column="119" selection-end-line="42" selection-end-column="120" />
+          <caret line="43" column="120" selection-start-line="43" selection-start-column="119" selection-end-line="43" selection-end-column="120" />
+          <caret line="44" column="120" selection-start-line="44" selection-start-column="119" selection-end-line="44" selection-end-column="120" />
+          <caret line="45" column="120" selection-start-line="45" selection-start-column="119" selection-end-line="45" selection-end-column="120" />
+          <caret line="46" column="120" selection-start-line="46" selection-start-column="119" selection-end-line="46" selection-end-column="120" />
+          <caret line="47" column="120" selection-start-line="47" selection-start-column="119" selection-end-line="47" selection-end-column="120" />
+          <caret line="48" column="120" selection-start-line="48" selection-start-column="119" selection-end-line="48" selection-end-column="120" />
+          <caret line="49" column="120" selection-start-line="49" selection-start-column="119" selection-end-line="49" selection-end-column="120" />
+          <caret line="50" column="120" selection-start-line="50" selection-start-column="119" selection-end-line="50" selection-end-column="120" />
+          <caret line="51" column="120" selection-start-line="51" selection-start-column="119" selection-end-line="51" selection-end-column="120" />
+          <caret line="52" column="120" selection-start-line="52" selection-start-column="119" selection-end-line="52" selection-end-column="120" />
+          <caret line="53" column="120" selection-start-line="53" selection-start-column="119" selection-end-line="53" selection-end-column="120" />
+          <caret line="54" column="120" selection-start-line="54" selection-start-column="119" selection-end-line="54" selection-end-column="120" />
+          <caret line="55" column="120" selection-start-line="55" selection-start-column="119" selection-end-line="55" selection-end-column="120" />
+          <caret line="56" column="120" selection-start-line="56" selection-start-column="119" selection-end-line="56" selection-end-column="120" />
+          <caret line="57" column="120" selection-start-line="57" selection-start-column="119" selection-end-line="57" selection-end-column="120" />
+          <caret line="58" column="120" selection-start-line="58" selection-start-column="119" selection-end-line="58" selection-end-column="120" />
+          <caret line="59" column="120" selection-start-line="59" selection-start-column="119" selection-end-line="59" selection-end-column="120" />
+          <caret line="60" column="120" selection-start-line="60" selection-start-column="119" selection-end-line="60" selection-end-column="120" />
+          <caret line="61" column="120" selection-start-line="61" selection-start-column="119" selection-end-line="61" selection-end-column="120" />
+          <caret line="62" column="120" selection-start-line="62" selection-start-column="119" selection-end-line="62" selection-end-column="120" />
+          <caret line="63" column="120" selection-start-line="63" selection-start-column="119" selection-end-line="63" selection-end-column="120" />
+          <caret line="64" column="120" selection-start-line="64" selection-start-column="119" selection-end-line="64" selection-end-column="120" />
+          <caret line="65" column="120" selection-start-line="65" selection-start-column="119" selection-end-line="65" selection-end-column="120" />
+          <caret line="66" column="120" selection-start-line="66" selection-start-column="119" selection-end-line="66" selection-end-column="120" />
+          <caret line="67" column="120" selection-start-line="67" selection-start-column="119" selection-end-line="67" selection-end-column="120" />
+          <caret line="68" column="120" selection-start-line="68" selection-start-column="119" selection-end-line="68" selection-end-column="120" />
+          <caret line="69" column="120" selection-start-line="69" selection-start-column="119" selection-end-line="69" selection-end-column="120" />
+          <caret line="70" column="120" selection-start-line="70" selection-start-column="119" selection-end-line="70" selection-end-column="120" />
+          <caret line="71" column="120" selection-start-line="71" selection-start-column="119" selection-end-line="71" selection-end-column="120" />
+          <caret line="72" column="120" selection-start-line="72" selection-start-column="119" selection-end-line="72" selection-end-column="120" />
+          <caret line="73" column="120" selection-start-line="73" selection-start-column="119" selection-end-line="73" selection-end-column="120" />
+          <caret line="74" column="120" selection-start-line="74" selection-start-column="119" selection-end-line="74" selection-end-column="120" />
+          <caret line="75" column="120" selection-start-line="75" selection-start-column="119" selection-end-line="75" selection-end-column="120" />
+          <caret line="76" column="120" selection-start-line="76" selection-start-column="119" selection-end-line="76" selection-end-column="120" />
+          <caret line="77" column="120" selection-start-line="77" selection-start-column="119" selection-end-line="77" selection-end-column="120" />
+          <caret line="78" column="120" selection-start-line="78" selection-start-column="119" selection-end-line="78" selection-end-column="120" />
+          <caret line="79" column="120" selection-start-line="79" selection-start-column="119" selection-end-line="79" selection-end-column="120" />
+          <caret line="80" column="120" selection-start-line="80" selection-start-column="119" selection-end-line="80" selection-end-column="120" />
+          <caret line="81" column="120" selection-start-line="81" selection-start-column="119" selection-end-line="81" selection-end-column="120" />
+          <caret line="82" column="120" selection-start-line="82" selection-start-column="119" selection-end-line="82" selection-end-column="120" />
+          <caret line="83" column="120" selection-start-line="83" selection-start-column="119" selection-end-line="83" selection-end-column="120" />
+          <caret line="84" column="120" selection-start-line="84" selection-start-column="119" selection-end-line="84" selection-end-column="120" />
+          <caret line="85" column="120" selection-start-line="85" selection-start-column="119" selection-end-line="85" selection-end-column="120" />
+          <caret line="86" column="120" selection-start-line="86" selection-start-column="119" selection-end-line="86" selection-end-column="120" />
+          <caret line="87" column="120" selection-start-line="87" selection-start-column="119" selection-end-line="87" selection-end-column="120" />
+          <caret line="88" column="120" selection-start-line="88" selection-start-column="119" selection-end-line="88" selection-end-column="120" />
+          <caret line="89" column="120" selection-start-line="89" selection-start-column="119" selection-end-line="89" selection-end-column="120" />
+          <caret line="90" column="120" selection-start-line="90" selection-start-column="119" selection-end-line="90" selection-end-column="120" />
+          <caret line="91" column="120" selection-start-line="91" selection-start-column="119" selection-end-line="91" selection-end-column="120" />
+          <caret line="92" column="120" selection-start-line="92" selection-start-column="119" selection-end-line="92" selection-end-column="120" />
+          <caret line="93" column="120" selection-start-line="93" selection-start-column="119" selection-end-line="93" selection-end-column="120" />
+          <caret line="94" column="120" selection-start-line="94" selection-start-column="119" selection-end-line="94" selection-end-column="120" />
+          <caret line="95" column="120" selection-start-line="95" selection-start-column="119" selection-end-line="95" selection-end-column="120" />
+          <caret line="96" column="120" selection-start-line="96" selection-start-column="119" selection-end-line="96" selection-end-column="120" />
+          <caret line="97" column="120" selection-start-line="97" selection-start-column="119" selection-end-line="97" selection-end-column="120" />
+          <caret line="98" column="120" selection-start-line="98" selection-start-column="119" selection-end-line="98" selection-end-column="120" />
+          <caret line="99" column="120" selection-start-line="99" selection-start-column="119" selection-end-line="99" selection-end-column="120" />
+          <caret line="100" column="120" selection-start-line="100" selection-start-column="119" selection-end-line="100" selection-end-column="120" />
+          <caret line="101" column="120" selection-start-line="101" selection-start-column="119" selection-end-line="101" selection-end-column="120" />
+          <caret line="102" column="120" selection-start-line="102" selection-start-column="119" selection-end-line="102" selection-end-column="120" />
+          <caret line="103" column="120" selection-start-line="103" selection-start-column="119" selection-end-line="103" selection-end-column="120" />
+          <caret line="104" column="120" selection-start-line="104" selection-start-column="119" selection-end-line="104" selection-end-column="120" />
+          <caret line="105" column="120" selection-start-line="105" selection-start-column="119" selection-end-line="105" selection-end-column="120" />
+          <caret line="106" column="120" selection-start-line="106" selection-start-column="119" selection-end-line="106" selection-end-column="120" />
+          <caret line="107" column="120" selection-start-line="107" selection-start-column="119" selection-end-line="107" selection-end-column="120" />
+          <caret line="108" column="120" selection-start-line="108" selection-start-column="119" selection-end-line="108" selection-end-column="120" />
+          <caret line="109" column="120" selection-start-line="109" selection-start-column="119" selection-end-line="109" selection-end-column="120" />
+          <caret line="110" column="120" selection-start-line="110" selection-start-column="119" selection-end-line="110" selection-end-column="120" />
+          <caret line="111" column="120" selection-start-line="111" selection-start-column="119" selection-end-line="111" selection-end-column="120" />
+          <caret line="112" column="120" selection-start-line="112" selection-start-column="119" selection-end-line="112" selection-end-column="120" />
+          <caret line="113" column="120" selection-start-line="113" selection-start-column="119" selection-end-line="113" selection-end-column="120" />
+          <caret line="114" column="120" selection-start-line="114" selection-start-column="119" selection-end-line="114" selection-end-column="120" />
+          <caret line="115" column="120" selection-start-line="115" selection-start-column="119" selection-end-line="115" selection-end-column="120" />
+          <caret line="116" column="120" selection-start-line="116" selection-start-column="119" selection-end-line="116" selection-end-column="120" />
+          <caret line="117" column="120" selection-start-line="117" selection-start-column="119" selection-end-line="117" selection-end-column="120" />
+          <caret line="118" column="120" selection-start-line="118" selection-start-column="119" selection-end-line="118" selection-end-column="120" />
+          <caret line="119" column="120" selection-start-line="119" selection-start-column="119" selection-end-line="119" selection-end-column="120" />
+          <caret line="120" column="120" selection-start-line="120" selection-start-column="119" selection-end-line="120" selection-end-column="120" />
+          <caret line="121" column="120" selection-start-line="121" selection-start-column="119" selection-end-line="121" selection-end-column="120" />
+          <caret line="122" column="120" selection-start-line="122" selection-start-column="119" selection-end-line="122" selection-end-column="120" />
+          <caret line="123" column="120" selection-start-line="123" selection-start-column="119" selection-end-line="123" selection-end-column="120" />
+          <caret line="124" column="120" selection-start-line="124" selection-start-column="119" selection-end-line="124" selection-end-column="120" />
+          <caret line="125" column="120" selection-start-line="125" selection-start-column="119" selection-end-line="125" selection-end-column="120" />
+          <caret line="126" column="120" selection-start-line="126" selection-start-column="119" selection-end-line="126" selection-end-column="120" />
+          <caret line="127" column="120" selection-start-line="127" selection-start-column="119" selection-end-line="127" selection-end-column="120" />
+          <caret line="128" column="120" selection-start-line="128" selection-start-column="119" selection-end-line="128" selection-end-column="120" />
+          <caret line="129" column="120" selection-start-line="129" selection-start-column="119" selection-end-line="129" selection-end-column="120" />
+          <caret line="130" column="120" selection-start-line="130" selection-start-column="119" selection-end-line="130" selection-end-column="120" />
+          <caret line="131" column="120" selection-start-line="131" selection-start-column="119" selection-end-line="131" selection-end-column="120" />
+          <caret line="132" column="120" selection-start-line="132" selection-start-column="119" selection-end-line="132" selection-end-column="120" />
+          <caret line="133" column="120" selection-start-line="133" selection-start-column="119" selection-end-line="133" selection-end-column="120" />
+          <caret line="134" column="120" selection-start-line="134" selection-start-column="119" selection-end-line="134" selection-end-column="120" />
+          <caret line="135" column="120" selection-start-line="135" selection-start-column="119" selection-end-line="135" selection-end-column="120" />
+          <caret line="136" column="120" selection-start-line="136" selection-start-column="119" selection-end-line="136" selection-end-column="120" />
+          <caret line="137" column="120" selection-start-line="137" selection-start-column="119" selection-end-line="137" selection-end-column="120" />
+          <caret line="138" column="120" selection-start-line="138" selection-start-column="119" selection-end-line="138" selection-end-column="120" />
+          <caret line="139" column="120" selection-start-line="139" selection-start-column="119" selection-end-line="139" selection-end-column="120" />
+          <caret line="140" column="120" selection-start-line="140" selection-start-column="119" selection-end-line="140" selection-end-column="120" />
+          <caret line="141" column="120" selection-start-line="141" selection-start-column="119" selection-end-line="141" selection-end-column="120" />
+          <caret line="142" column="120" selection-start-line="142" selection-start-column="119" selection-end-line="142" selection-end-column="120" />
+          <caret line="143" column="120" selection-start-line="143" selection-start-column="119" selection-end-line="143" selection-end-column="120" />
+          <caret line="144" column="120" selection-start-line="144" selection-start-column="119" selection-end-line="144" selection-end-column="120" />
+          <caret line="145" column="120" selection-start-line="145" selection-start-column="119" selection-end-line="145" selection-end-column="120" />
+          <caret line="146" column="120" selection-start-line="146" selection-start-column="119" selection-end-line="146" selection-end-column="120" />
+          <caret line="147" column="120" selection-start-line="147" selection-start-column="119" selection-end-line="147" selection-end-column="120" />
+          <caret line="148" column="120" selection-start-line="148" selection-start-column="119" selection-end-line="148" selection-end-column="120" />
+          <caret line="149" column="120" selection-start-line="149" selection-start-column="119" selection-end-line="149" selection-end-column="120" />
+          <caret line="150" column="120" selection-start-line="150" selection-start-column="119" selection-end-line="150" selection-end-column="120" />
+          <caret line="151" column="120" selection-start-line="151" selection-start-column="119" selection-end-line="151" selection-end-column="120" />
+          <caret line="152" column="120" selection-start-line="152" selection-start-column="119" selection-end-line="152" selection-end-column="120" />
+          <caret line="153" column="120" selection-start-line="153" selection-start-column="119" selection-end-line="153" selection-end-column="120" />
+          <caret line="154" column="120" selection-start-line="154" selection-start-column="119" selection-end-line="154" selection-end-column="120" />
+          <caret line="155" column="120" selection-start-line="155" selection-start-column="119" selection-end-line="155" selection-end-column="120" />
+          <caret line="156" column="120" selection-start-line="156" selection-start-column="119" selection-end-line="156" selection-end-column="120" />
+          <caret line="157" column="120" selection-start-line="157" selection-start-column="119" selection-end-line="157" selection-end-column="120" />
+          <caret line="158" column="120" selection-start-line="158" selection-start-column="119" selection-end-line="158" selection-end-column="120" />
+          <caret line="159" column="120" selection-start-line="159" selection-start-column="119" selection-end-line="159" selection-end-column="120" />
+          <caret line="160" column="120" selection-start-line="160" selection-start-column="119" selection-end-line="160" selection-end-column="120" />
+          <caret line="161" column="120" selection-start-line="161" selection-start-column="119" selection-end-line="161" selection-end-column="120" />
+          <caret line="162" column="120" selection-start-line="162" selection-start-column="119" selection-end-line="162" selection-end-column="120" />
+          <caret line="163" column="120" selection-start-line="163" selection-start-column="119" selection-end-line="163" selection-end-column="120" />
+          <caret line="164" column="120" selection-start-line="164" selection-start-column="119" selection-end-line="164" selection-end-column="120" />
+          <caret line="165" column="120" selection-start-line="165" selection-start-column="119" selection-end-line="165" selection-end-column="120" />
+          <caret line="166" column="120" selection-start-line="166" selection-start-column="119" selection-end-line="166" selection-end-column="120" />
+          <caret line="167" column="120" selection-start-line="167" selection-start-column="119" selection-end-line="167" selection-end-column="120" />
+          <caret line="168" column="120" selection-start-line="168" selection-start-column="119" selection-end-line="168" selection-end-column="120" />
+          <caret line="169" column="120" selection-start-line="169" selection-start-column="119" selection-end-line="169" selection-end-column="120" />
+          <caret line="170" column="120" selection-start-line="170" selection-start-column="119" selection-end-line="170" selection-end-column="120" />
+          <caret line="171" column="120" selection-start-line="171" selection-start-column="119" selection-end-line="171" selection-end-column="120" />
+          <caret line="172" column="120" selection-start-line="172" selection-start-column="119" selection-end-line="172" selection-end-column="120" />
+          <caret line="173" column="120" selection-start-line="173" selection-start-column="119" selection-end-line="173" selection-end-column="120" />
+          <caret line="174" column="120" selection-start-line="174" selection-start-column="119" selection-end-line="174" selection-end-column="120" />
+          <caret line="175" column="120" selection-start-line="175" selection-start-column="119" selection-end-line="175" selection-end-column="120" />
+          <caret line="176" column="120" selection-start-line="176" selection-start-column="119" selection-end-line="176" selection-end-column="120" />
+          <caret line="177" column="120" selection-start-line="177" selection-start-column="119" selection-end-line="177" selection-end-column="120" />
+          <caret line="178" column="120" selection-start-line="178" selection-start-column="119" selection-end-line="178" selection-end-column="120" />
+          <caret line="179" column="120" selection-start-line="179" selection-start-column="119" selection-end-line="179" selection-end-column="120" />
+          <caret line="180" column="120" selection-start-line="180" selection-start-column="119" selection-end-line="180" selection-end-column="120" />
+          <caret line="181" column="120" selection-start-line="181" selection-start-column="119" selection-end-line="181" selection-end-column="120" />
+          <caret line="182" column="120" selection-start-line="182" selection-start-column="119" selection-end-line="182" selection-end-column="120" />
+          <caret line="183" column="120" selection-start-line="183" selection-start-column="119" selection-end-line="183" selection-end-column="120" />
+          <caret line="184" column="120" selection-start-line="184" selection-start-column="119" selection-end-line="184" selection-end-column="120" />
+          <caret line="185" column="120" selection-start-line="185" selection-start-column="119" selection-end-line="185" selection-end-column="120" />
+          <caret line="186" column="120" selection-start-line="186" selection-start-column="119" selection-end-line="186" selection-end-column="120" />
+          <caret line="187" column="120" selection-start-line="187" selection-start-column="119" selection-end-line="187" selection-end-column="120" />
+          <caret line="188" column="120" selection-start-line="188" selection-start-column="119" selection-end-line="188" selection-end-column="120" />
+          <caret line="189" column="120" selection-start-line="189" selection-start-column="119" selection-end-line="189" selection-end-column="120" />
+          <caret line="190" column="120" selection-start-line="190" selection-start-column="119" selection-end-line="190" selection-end-column="120" />
+          <caret line="191" column="120" selection-start-line="191" selection-start-column="119" selection-end-line="191" selection-end-column="120" />
+          <caret line="192" column="120" selection-start-line="192" selection-start-column="119" selection-end-line="192" selection-end-column="120" />
+          <caret line="193" column="120" selection-start-line="193" selection-start-column="119" selection-end-line="193" selection-end-column="120" />
+          <caret line="194" column="120" selection-start-line="194" selection-start-column="119" selection-end-line="194" selection-end-column="120" />
+          <caret line="195" column="120" selection-start-line="195" selection-start-column="119" selection-end-line="195" selection-end-column="120" />
+          <caret line="196" column="120" selection-start-line="196" selection-start-column="119" selection-end-line="196" selection-end-column="120" />
+          <caret line="197" column="120" selection-start-line="197" selection-start-column="119" selection-end-line="197" selection-end-column="120" />
+          <caret line="198" column="120" selection-start-line="198" selection-start-column="119" selection-end-line="198" selection-end-column="120" />
+          <caret line="199" column="120" selection-start-line="199" selection-start-column="119" selection-end-line="199" selection-end-column="120" />
+          <caret line="200" column="120" selection-start-line="200" selection-start-column="119" selection-end-line="200" selection-end-column="120" />
+          <caret line="201" column="120" selection-start-line="201" selection-start-column="119" selection-end-line="201" selection-end-column="120" />
+          <caret line="202" column="120" selection-start-line="202" selection-start-column="119" selection-end-line="202" selection-end-column="120" />
+          <caret line="203" column="120" selection-start-line="203" selection-start-column="119" selection-end-line="203" selection-end-column="120" />
+          <caret line="204" column="120" selection-start-line="204" selection-start-column="119" selection-end-line="204" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scene.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="447">
+          <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/astar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
         </state>
       </provider>
     </entry>

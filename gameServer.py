@@ -43,7 +43,7 @@ class GameServer(object):
         while True:
             time.sleep(0.005)
             TimerManager.scheduler()
-            if self.monsterNums> conf.MONSTER_NUM_ROUND1:
+            if self.monsterNums>= conf.MONSTER_NUM_ROUND1:
                 TimerManager.cancel(spawntimer)
             count += 1
 
@@ -85,8 +85,8 @@ class GameServer(object):
         elif mtype == conf.MSG_CS_TRAPPLACE:
             if self.onlines.has_key(hid):
                 data = MsgCSTrapPlace().unmarshal(msg)
-                if self.sceneManager.addTrap(data.type,data.x,data.z):
-                    # todo ---in scene- change hid coin
+                if self.sceneManager.addTrap(data.uid,data.type,data.x,data.z):
+                    # todo ---in scene- change hid trap remain
                     pass
             else:
                 print 'offline player trying to place trap'
@@ -101,6 +101,11 @@ class GameServer(object):
                         head1 = MsgSCMonsterDeath(data.uid, mid)
                         self.msgQueue.put_nowait(([hid],head1.marshal()))
                     self._syncPlayerInfo(hid,self.onlines[hid])
+        elif mtype == conf.MSG_CS_BUY_TRAP:
+            # print 'buy trap entry'
+            if self.onlines.has_key(hid):
+                data = MsgCSBuyTrap().unmarshal(msg)
+                self.sceneManager.buyTrap(data.uid,data.ttype)
         else:
             pass
 
@@ -173,12 +178,13 @@ class GameServer(object):
                 for playerinfo in playerinfos:
                     head = MsgSCMoveto(playerinfo['uid'],playerinfo['x'],playerinfo['z'])
                     self.msgQueue.put_nowait(([hid], head.marshal()))
+                self._syncPlayerInfo(hid,uid)
 
     def _syncPlayerInfo(self, hid, uid):
         if hid == None:
             hid = self._getPlayerhid(uid)
         info = self.sceneManager.playerList[uid]
-        head = MsgSCPlayerInfo(uid,info['hp'],info['coin'],info['exp'])
+        head = MsgSCPlayerInfo(uid,info['hp'],info['coin'],info['exp'],info['spike'],info['freeze'])
         self.msgQueue.put_nowait(([hid], head.marshal()))
 
 
